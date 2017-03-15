@@ -12,7 +12,7 @@ namespace BraikoN15
         static void Main(string[] args)
         {            
             {
-                var game = new Game(1,2, 4, 3, 5, 6, 7, 8, 0);
+                var game = new Game(5,6,1,4,3,7,2,8,0);
                 while (!game.CheckWIN())
                 {
                     Printt.Print(game);
