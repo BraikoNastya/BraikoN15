@@ -10,6 +10,38 @@ namespace BraikoN15
     {
         public readonly int[,] field;
 
+        public Game(int size)
+        {
+            this.field = new int[size, size];
+            
+        }
+        public void Filling(Random Gen) //Заполнение массива
+        {
+            int[] numbers = new int[field.Length];
+            for (int i = 0; i < numbers.GetLength(0); i++)
+            {
+                if (i != numbers.Length - 1)
+                {
+                    numbers[i] = i + 1;
+                }
+            }
+            int measure = 1;
+            for (int i = 0; i < field.GetLength(0); i++)
+            {
+                for (int j = 0; j < field.GetLength(1); j++)
+                {
+                    if (measure != field.Length)
+                    {
+                        field[i, j] = measure;
+                        measure++;
+                    }
+                    else
+                    {
+                        field[i, j] = 0;
+                    }
+                }
+            }
+        }
         public Game(params int[] gets)
         {
 
@@ -95,7 +127,7 @@ namespace BraikoN15
             }
             return status;
         }
-
+        
         private bool Test(int[] gets)
         {
             bool ret = true;
