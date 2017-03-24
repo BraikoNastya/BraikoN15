@@ -15,7 +15,7 @@ namespace BraikoN15
             stepsPlayer = new List<int>();
 
         }
-        public override void Shift(int value)
+        public override bool Shift(int value)
         {
             base.Shift(value);
             stepsPlayer.Add(value);
