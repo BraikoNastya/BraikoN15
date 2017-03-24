@@ -13,11 +13,11 @@ namespace BraikoN15
         {
             Randomize();
         }
-       /* public Game2(int size)
+        public Game2(int size)
             : base(size)
         {
             Randomize();
-        }*/
+        }
         protected void Randomize() //поменять местами числа в массиве
         {
             Random gen = new Random();
