@@ -8,17 +8,17 @@ namespace BraikoN15
 {
     class Game2 : Game
     {
-        public Game2(int[] numbers)
-            : base(numbers)
+        public Game2(int[] gets)
+            : base(gets)
         {
-            
+            Randomize();
         }
-        public Game2(int size)
+       /* public Game2(int size)
             : base(size)
         {
-            ChangeNumbersOnField();
-        }
-        public void ChangeNumbersOnField() //поменять местами числа в массиве
+            Randomize();
+        }*/
+        protected void Randomize() //поменять местами числа в массиве
         {
             Random gen = new Random();
             int[] numbers = new int[field.Length];
@@ -47,6 +47,29 @@ namespace BraikoN15
                     numbers[index] = Int32.MaxValue;
                 }
             }
+        }
+        public bool CheckWIN()
+        {
+            bool status = true;
+            int[] temper = new int[field.Length];
+            int temp = 0;
+            foreach (var item in field)
+            {
+                temper[temp] = item;
+                temp++;
+            }
+            for (int i = 0; i < temper.Length - 1; i++)
+            {
+                if ((i != temper.Length - 2) && (temper[i] > temper[i + 1]))
+                {
+                    status = false;
+                }
+                if (temper[temper.Length - 1] != 0)
+                {
+                    status = false;
+                }
+            }
+            return status;
         }
     }
 }

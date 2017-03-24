@@ -45,7 +45,7 @@ namespace BraikoN15
         public Game(params int[] gets)
         {
 
-            if (Test(gets))
+            if (TestFile(gets))
             {
 
                 int temp = 0;
@@ -70,7 +70,7 @@ namespace BraikoN15
             get { return field[x, y]; }
             
         }
-        public bool Shift(int val)
+        public virtual bool Shift(int val)
         {
             int i1 = 0;
             int j1 = 0;
@@ -104,31 +104,9 @@ namespace BraikoN15
             }
         }
 
-        public bool CheckWIN()
-        {
-            bool status = true;
-            int[] temper = new int[field.Length];
-            int temp = 0;
-            foreach (var item in field)
-            {
-                temper[temp] = item;
-                temp++;
-            }
-            for (int i = 0; i < temper.Length - 1; i++)
-            {
-                if ((i != temper.Length - 2) && (temper[i] > temper[i + 1]))
-                {
-                    status = false;
-                }
-                if (temper[temper.Length - 1] != 0)
-                {
-                    status = false;
-                }
-            }
-            return status;
-        }
+       
         
-        private bool Test(int[] gets)
+        private bool TestFile(int[] gets)
         {
             bool ret = true;
             int gameline = (int)Math.Sqrt(gets.Length);

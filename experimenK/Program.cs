@@ -33,7 +33,6 @@ namespace BraikoN15
             }
             Printt.Print(game2);
 
-
             {
                 var game = new Game(5, 6, 1, 4, 3, 7, 2, 8, 0);
                 while (game.CheckWIN() == false)
@@ -70,5 +69,5 @@ namespace BraikoN15
                 Console.ReadLine();
             }
         }
-    }
+    
 }
